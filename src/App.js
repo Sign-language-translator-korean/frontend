@@ -1,23 +1,18 @@
-import { useState, useEffect } from "react";
 import Header from './components/header'
+import Home from './pages/home'
+import Footer from './components/footer'
+
+import './styles/App.css'
 
 function App() {
-  const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    fetch("http://127.0.0.1:8000/")
-      .then((response) => response.json())
-      .then((data) => setMessage(data.message))
-      .catch((error) => console.error("Error fetching data:", error));
-  }, []);
 
   return (
-    <div>
+    <div class="app__body">
       <Header />
-      <h1>FastAPI + React</h1>
-      <p>API 응답: {message}</p>
+      <Home />
+      <Footer />
     </div>
-  );
+  )
 }
 
 export default App;
