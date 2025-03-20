@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Header from './components/header'
 
 function App() {
   const [message, setMessage] = useState("");
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <div>
+      <Header />
       <h1>FastAPI + React</h1>
       <p>API 응답: {message}</p>
     </div>
